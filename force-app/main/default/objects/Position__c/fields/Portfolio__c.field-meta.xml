@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Portfolio__c</fullName>
+    <description>Master-Detail relationship to link the position for a specific Portfolio</description>
+    <label>Portfolio</label>
+    <referenceTo>Portfolio__c</referenceTo>
+    <relationshipLabel>Positions</relationshipLabel>
+    <relationshipName>Positions</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

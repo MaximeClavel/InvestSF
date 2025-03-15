@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stocks</fullName>
+    <active>true</active>
+    <description>Stocks Portoflio represent a Portfolio without specific financial tool</description>
+    <label>Stocks</label>
+</RecordType>
