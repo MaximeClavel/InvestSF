@@ -34,8 +34,8 @@ public with sharing class EmailServiceGmail implements Messaging.InboundEmailHan
             System.debug('MCLA Cleaned subject: ' + cleanSubject);
             
             // Regex pour extraire les données du sujet (ex: "BOUGHT 1 NKE @ 81.1 (UXXX43662)")
-            // Modifié pour accepter les tickers avec espaces
-            Pattern pattern = Pattern.compile('^\\s*(BOUGHT|SOLD)\\s+(\\d+)\\s+([A-Z][A-Z0-9\\s]*)\\s+@\\s+([\\d.]+)\\s*\\(([^)]+)\\)');
+            // Modifié pour accepter les tickers avec espaces et les quantités décimales
+            Pattern pattern = Pattern.compile('^\\s*(BOUGHT|SOLD)\\s+([\\d.]+)\\s+([A-Z][A-Z0-9\\s.]*?)\\s+@\\s+([\\d.]+)\\s*\\(([^)]+)\\)');
             Matcher matcher = pattern.matcher(cleanSubject);
             System.debug('MCLA pattern : ' + pattern);
             System.debug('MCLA matcher : ' + matcher);
@@ -133,7 +133,7 @@ public with sharing class EmailServiceGmail implements Messaging.InboundEmailHan
                     Date transactionDate = Date.today();
                     if (email.plainTextBody != null) {
                         // Recherche de la ligne contenant "Sent Date:" dans le corps du message
-                        Pattern datePattern = Pattern.compile('Sent Date:\\s*([\\d.-]+)');
+                        Pattern datePattern = System.Pattern.compile('Sent Date:\\s*([\\d.-]+)');
                         Matcher dateMatcher = datePattern.matcher(email.plainTextBody);
                         if (dateMatcher.find()) {
                             String dateStr = dateMatcher.group(1).replace('.', '-');
