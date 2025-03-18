@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PositionCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>AveragePurchasePrice__c</fields>
+    <fields>TotalQuantity__c</fields>
+    <fields>StatusCalculate__c</fields>
+    <label>Position Compact Layout</label>
+</CompactLayout>
